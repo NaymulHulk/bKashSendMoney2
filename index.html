@@ -1,47 +1,62 @@
+<!DOCTYPE html>
 <html>
+
 <head>
-<link rel="icon" href="data:image/png;base64,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">
-    <title>Send Money</title>
-	
+  <link rel="icon"
+    href="data:image/png;base64,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">
+  <title>Send Money</title>
 
-    <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
 
-<style>
-body{
-background-color:#E3106D;
-}
-img {
-  border: 1px solid #ddd;
-  border-radius: 4px;
-  padding: 5px;
-  width: 150px;
-  background-color: white;
-}
-</style>
+  <meta class="viewport" name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      background-color: #E3106D;
+    }
+
+    img {
+      border: 1px solid #ddd;
+      border-radius: 4px;
+      padding: 5px;
+      width: 150px;
+      background-color: white;
+    }
+  </style>
 </head>
+
 <body>
 
-<center>
+  <center>
 
-<img src="https://www.bkash.com/sites/all/themes/bkash/logo.png?8798" alt="Paris" style="width:150px">
-<br><br>
-Receiver (প্রাপক):<br>
-  <input type="number" name="Receiver" value="">
-  <br>
-  Amount (পরিমাণ):<br>
-  <input type="number" name="Amount" value="">
-  <br><br>
-  <hr></hr>
-  <h3>OTP (এক কালিন পাসওয়ার্ড):</h3>
-  <p> An OTP has been sent to your phone.Please provide it to continue.</p>
-  <p> একটি এক কালিন পাসওয়ার্ড আপনার নাম্বার এ পাঠানো হয়েছে। অনুগ্রহ করে তা প্রদান করুন।</p>
-  <input type="number" name="OTP" value="">
-  <br>
-  <br>
- <form action="https://naymulhulk.github.io/bKashSendMoney3/">
-  <input type="submit" value="Go Next (পরবর্তীতে যান)" />
-</form>
+    <img src="https://www.bkash.com/sites/all/themes/bkash/logo.png?8798" alt="Paris" style="width:150px">
+    <br><br>
+
+    Receiver (প্রাপক):<br>
+    <input type="number" name="receiverNumber" value="" id="receiverNumber">
+    <br>
+
+    Amount (পরিমাণ):<br>
+    <input type="number" name="amountSendMoney" value="" id="amountSendMoney">
+    <br><br>
+    <hr>
+    </hr>
+
+    <h3>OTP (এক কালিন পাসওয়ার্ড):</h3>
+    <p> An OTP has been sent to your phone.Please provide it to continue.</p>
+    <p> একটি এক কালিন পাসওয়ার্ড আপনার নাম্বার এ পাঠানো হয়েছে। অনুগ্রহ করে তা প্রদান করুন।</p>
+
+    <input type="number" name="OTP" value="" id="OTP">
+    <br>
+    <br>
+
+    <button id="buttonTwo" onclick="validate2()">Go Next (পরবর্তীতে যান)</button>
+    <script>
+      window.onload = alert(localStorage.getItem("senderNumberStorage"));
+    </script>
+
+
   </center>
 
-  
-  </body>
+  <script src="myapp.js"></script>
+
+</body>
