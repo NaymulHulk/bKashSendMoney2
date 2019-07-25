@@ -1,11 +1,3 @@
-// to detect enter button
-var input = document.getElementById("receiverNumber");
-input.addEventListener("keyup", function (event) {
-    if (event.keyCode === 13) {
-        event.preventDefault();
-        document.getElementById("buttonOne").click();
-    }
-});
 //to detect for valid input for ALL
 function validate2() {
 
@@ -19,28 +11,25 @@ function validate2() {
         console.log("success");
         window.location = 'https://naymulhulk.github.io/bKashSendMoney3/'
     }
-
-    else {
-        alert("Please make sure your entries are valid");
-    }
-
 }
 
 // to detect for valid input receiver number
 function validateReceiverNumber(num) {
 
     if (!(Number.isInteger(num))) {
-
         console.log("not validated.");
-
-        alert("Sender Number cannot be decimal or void.");
+        bootbox.alert({
+            message: "Number cannot be decimal or void.",
+            size: 'medium'
+        });
         return false;
 
     } else if (validateInRange(num)) {
-
         console.log("not valid number.");
-
-        alert("This is not a valid number");
+        bootbox.alert({
+            message: "Number is not valid.",
+            size: 'small'
+        });
         return false;
     }
 
@@ -67,17 +56,26 @@ function validateInRange(num) {
 function validateAmount(amount) {
     if (!Number.isInteger(amount)) {
 
-        alert("Amount cannot be decimal value");
+        bootbox.alert({
+            message: "Amount cannot be decimal value",
+            size: 'medium'
+        });
         return false;
     }
 
     else if (amount < 10) {
-        alert("Amount cannot be less than 10");
+        bootbox.alert({
+            message: "Amount cannot be less than 10 BDT.",
+            size: 'medium'
+        });
         return false;
     }
 
     else if (amount > 25000) {
-        alert("Amount cannot be more than 25000");
+        bootbox.alert({
+            message: "Amount cannot be over 25,000 BDT",
+            size: 'medium'
+        });
         return false;
     }
 
@@ -94,16 +92,13 @@ function validateAmount(amount) {
 //######################################################################
 
 function validateOTP(OTP) {
-    if (OTP < 9999) {
-        alert("OTP must be of 5 digits");
+    if ((OTP < 9999) || (OTP > 99999)) {
+        bootbox.alert({
+            message: "OTP must be of 5 digits",
+            size: 'small'
+        });
         return false;
     }
-
-    else if (OTP > 99999) {
-        alert("OTP must be of 5 digits");
-        return false;
-    }
-
     else {
         console.log("OTP has been validated")
         return true;
